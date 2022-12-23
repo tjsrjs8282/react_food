@@ -17,7 +17,7 @@ function Popular() {
       setPopular(JSON.parse(check));
     } else {
       const api = await fetch(
-        `https://api.spoonacular.com/recipes/random?apiKey=${process.env.REACT_APP_API_KEY}&number=9`
+        `https://api.spoonacular.com/recipes/random?apiKey=${process.env.REACT_APP_API_KEY}&number=9&tags=vegetarian`
       );
       const data = await api.json();
       localStorage.setItem("popular", JSON.stringify(data.recipes));
@@ -60,7 +60,7 @@ const Wrapper = styled.div`
   margin: 4rem 0rem;
 `;
 const Card = styled.div`
-  min-height: 20rem;
+  min-height: 10rem;
   border-radius: 2rem;
   overflow: hidden;
   position: relative;
@@ -76,13 +76,13 @@ const Card = styled.div`
     position: absolute;
     z-index: 10;
     left: 50%;
-    bottom: 0%;
+    bottom: 5%;
     transform: translate(-50%, 0);
     color: #ffffff;
     width: 100%;
     text-align: center;
     font-weight: 600;
-    font-size: 1rem;
+    font-size: 0.8rem;
     heigth: 40%;
     display: flex;
     justify-content: center;
